@@ -17,6 +17,7 @@ export default class TacoList extends Component{
         .then(taco => this.props.history.push({pathname: '/edittaco', state: {tacoId: taco.id}}));
     }
 
+
     componentDidMount(){
         this.watchCode();
     }
@@ -39,16 +40,8 @@ export default class TacoList extends Component{
     }, 1000);
 
     render() {
-
-        const {name, quantity, pica} = this.state.currentTaco;
         return (
             <Fragment>
-                <div className="card" style={{width: '18rem'}}>
-                    <div className="card-body">
-                        <h5 className="card-title">{name}</h5>
-                        <p className="card-text">La orden viene con {quantity} tacos y {pica} pica.</p>
-                    </div>
-                </div>
                 <ul style={{
                     cursor: 'pointer'
                 }} className='list-group'>
